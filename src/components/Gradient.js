@@ -4,13 +4,13 @@ var React = require('react');
 var Gradient = React.createClass({
   getInitialState: function(){
     return {
-        gradient: "linear-gradient(#354 50%, #435 50%)"
+        gradient: "linear-gradient(#354, #435)"
     };
   },
   handleClick: function(position){
     console.log(position);
     if(position){
-      var gradient = 'linear-gradient(to '+position+', #354 50%, #435 50%)';
+      var gradient = 'linear-gradient(to '+position+', #354, #435)';
       console.log(gradient);
       this.setState({gradient: gradient});
     }
