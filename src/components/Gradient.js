@@ -1,15 +1,20 @@
 var React = require('react');
+var rgbHex = require('rgb-hex');
 
 
 var Gradient = React.createClass({
   getInitialState: function(){
+    var color1 = '#' + rgbHex(8,106,0);
+    var color2 = '#' + rgbHex(0,213,255);
     return {
-        gradient: 'linear-gradient(#354, #435)'
+        gradient: 'linear-gradient('+color1+', '+color2+')',
+        color1: color1,
+        color2: color2
     };
   },
   handleClick: function(position){
     if(position){
-      var gradient = 'linear-gradient(to '+position+', #354, #435)';
+      var gradient = 'linear-gradient(to '+position+', '+this.state.color1+', '+this.state.color2+')';
       this.setState({gradient: gradient});
     }
   },
