@@ -12,7 +12,7 @@ var AppComponent = React.createClass({
       <div className="row">
         <div className="col-sm-12">
           <ColorPicker />
-          <ComplementaryColors />
+          <ComplementaryColors/>
           <Gradient/>
           <Tints />
         </div>

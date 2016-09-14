@@ -4,14 +4,12 @@ var React = require('react');
 var Gradient = React.createClass({
   getInitialState: function(){
     return {
-        gradient: "linear-gradient(#354, #435)"
+        gradient: 'linear-gradient(#354, #435)'
     };
   },
   handleClick: function(position){
-    console.log(position);
     if(position){
       var gradient = 'linear-gradient(to '+position+', #354, #435)';
-      console.log(gradient);
       this.setState({gradient: gradient});
     }
   },
@@ -29,24 +27,24 @@ var Gradient = React.createClass({
           <div className="col-sm-9">
             <div className="btn-row">
               <button className="btn btn-default btn-sm" onClick={function(){
-                instance.handleClick("left top")
+                instance.handleClick('left top')
               }}>
                 <span className="glyphicon glyphicon-arrow-left" style={{transform: 'rotate(45deg)'}}></span>
               </button>
               <button className="btn btn-default btn-sm" onClick={function(){
-                instance.handleClick("top")
+                instance.handleClick('top')
               }}>
                 <span className="glyphicon glyphicon-arrow-up"></span>
               </button>
               <button className="btn btn-default btn-sm" onClick={function(){
-                instance.handleClick("right top")
+                instance.handleClick('right top')
               }}>
                 <span className="glyphicon glyphicon-arrow-right" style={{transform: 'rotate(-45deg)'}}></span>
               </button>
             </div>
             <div className="btn-row">
               <button className="btn btn-default btn-sm" onClick={function(){
-                instance.handleClick("left")
+                instance.handleClick('left')
               }}>
                 <span className="glyphicon glyphicon-arrow-left"></span>
               </button>
@@ -55,23 +53,23 @@ var Gradient = React.createClass({
               </button>
               <button className="btn btn-default btn-sm">
                 <span className="glyphicon glyphicon-arrow-right" onClick={function(){
-                  instance.handleClick("right")
+                  instance.handleClick('right')
                 }}></span>
               </button>
             </div>
             <div className="btn-row">
               <button className="btn btn-default btn-sm" onClick={function(){
-                instance.handleClick("left bottom")
+                instance.handleClick('left bottom')
               }}>
                 <span className="glyphicon glyphicon-arrow-left" style={{transform: 'rotate(-45deg)'}}></span>
               </button>
               <button className="btn btn-default btn-sm" onClick={function(){
-                instance.handleClick("bottom")
+                instance.handleClick('bottom')
               }}>
                 <span className="glyphicon glyphicon-arrow-down"></span>
               </button>
               <button className="btn btn-default btn-sm" onClick={function(){
-                instance.handleClick("right bottom")
+                instance.handleClick('right bottom')
               }}>
                 <span className="glyphicon glyphicon-arrow-right" style={{transform: 'rotate(45deg)'}}></span>
               </button>

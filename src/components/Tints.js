@@ -12,7 +12,7 @@ var Tints = React.createClass({
       g2: 51,
       b2: 85,
       color1: 'rgba(51,81,48,1)',
-      color2: 'rgba(68,51,85,1)',
+      color2: 'rgba(68,51,85,1)'
     };
   },
   handleChange: function(e){
@@ -28,7 +28,6 @@ var Tints = React.createClass({
     this.setState({color2: color2});
   },
   render: function(){
-    var instance = this;
     return (<div className="col-sm-12">
       <h3>Tints/Shadows</h3>
       <div className="row">
