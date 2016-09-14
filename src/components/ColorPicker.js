@@ -7,7 +7,7 @@ var MyColorPicker = React.createClass({
   getInitialState: function(){
     return {
       color1: '#3366cc',
-      color2: '#cc9933',
+      color2: '#cc9933'
     }
   },
   handlerColor1: function(colors){

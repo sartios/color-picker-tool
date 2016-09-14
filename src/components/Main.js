@@ -16,7 +16,7 @@ var AppComponent = React.createClass({
       color1: '#3366cc',
       color2: '#cc9933',
       rgb1: rgb1,
-      rgb2: rgb2,
+      rgb2: rgb2
     }
   },
   updateColor: function(color1, color2){

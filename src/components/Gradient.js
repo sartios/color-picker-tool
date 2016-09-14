@@ -54,7 +54,6 @@ var Gradient = React.createClass({
       });
     },
   render: function(){
-    var instance = this;
     if(this.state.tab == 'linear'){
       return (<div className="col-sm-12">
         <h2>Gradient</h2>

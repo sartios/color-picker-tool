@@ -4,7 +4,6 @@ var harmonizer = new Harmonizer();
 
 var ComplementaryCanvas = React.createClass({
   _renderCanvas : function(){
-    var instance = this;
     var canvas = document.getElementById(this.props.canvasId),
     ctx = canvas.getContext('2d');
     var color = harmonizer.harmonize(this.props.canvasColor, 'complementary');
@@ -20,7 +19,7 @@ var ComplementaryCanvas = React.createClass({
   componentDidMount: function(){
     this._renderCanvas();
   },
-  componentWillUpdate: function(nextProps){
+  componentWillUpdate: function(){
     this._renderCanvas();
   }
 });

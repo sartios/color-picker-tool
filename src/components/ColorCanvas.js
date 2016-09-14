@@ -16,7 +16,7 @@ var ColorCanvas = React.createClass({
   componentDidMount: function(){
     this._renderCanvas();
   },
-  componentWillUpdate: function(nextProps){
+  componentWillUpdate: function(){
     this._renderCanvas();
   }
 });
