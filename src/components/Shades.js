@@ -52,7 +52,7 @@ var Shades = React.createClass({
             <p style={{textAlign: 'center'}}>{this.state.shade1}%</p>
             <p style={{textAlign: 'center'}}>{this.state.color1}</p>
           </div>
-          <input id="shade1" type="range" min="0" max="100" value={this.state.shade1} onChange={this.handleshade1}/>
+          <input id="shade1" className="form-control" type="range" min="0" max="100" value={this.state.shade1} onChange={this.handleshade1}/>
         </div>
       </div>
       <div className="row">
@@ -61,7 +61,7 @@ var Shades = React.createClass({
             <p style={{textAlign: 'center'}}>{this.state.shade2}%</p>
             <p style={{textAlign: 'center'}}>{this.state.color2}</p>
           </div>
-          <input id="shade2" type="range" min="0" max="100" value={this.state.shade2} onChange={this.handleshade2}/>
+          <input id="shade2" className="form-control" type="range" min="0" max="100" value={this.state.shade2} onChange={this.handleshade2}/>
         </div>
       </div>
     </div>);
