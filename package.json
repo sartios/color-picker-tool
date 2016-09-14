@@ -69,6 +69,7 @@
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
-    "rgb-hex": "^2.0.0"
+    "rgb-hex": "^2.0.0",
+    "values.js": "^1.0.3"
   }
 }
