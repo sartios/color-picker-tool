@@ -10,11 +10,11 @@ var hexRgb = require('hex-rgb');
 
 var AppComponent = React.createClass({
   getInitialState: function(){
-    var rgb1 = hexRgb('#36c');
-    var rgb2 = hexRgb('#36c');
+    var rgb1 = hexRgb('#3366cc');
+    var rgb2 = hexRgb('#cc9933');
     return {
-      color1: '#36c',
-      color2: '#36c',
+      color1: '#3366cc',
+      color2: '#cc9933',
       rgb1: rgb1,
       rgb2: rgb2,
     }

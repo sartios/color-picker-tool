@@ -1,12 +1,13 @@
 var React = require('react');
 var ColorPicker = require('rc-color-picker');
 require('rc-color-picker/assets/index.css');
+require('./color-picker.css');
 
 var MyColorPicker = React.createClass({
   getInitialState: function(){
     return {
-      color1: '#36c',
-      color2: '#36c',
+      color1: '#3366cc',
+      color2: '#cc9933',
     }
   },
   handlerColor1: function(colors){
@@ -36,18 +37,22 @@ var MyColorPicker = React.createClass({
     });
   },
   render: function(){
-    return (<div className="col-sm-4">
+    return (<div className="col-sm-4 color-picker">
         <h2>ColorPicker</h2>
-        <div className="form-group">
-          <label for="color1">Color 1</label>
-          <input id="color1" type="text" className="form-control" value={this.state.color1} onChange={this.updateColorPicker1} />
+        <div className="form-group col-sm-12">
+          <label for="color1">Color 1
+            <input id="color1" className="form-control" value={this.state.color1} onChange={this.updateColorPicker1} />
+            </label>
           <ColorPicker onChange={this.handlerColor1} color={this.state.color1}/>
         </div>
-        <div className="form-group">
-          <label for="color2">Color 2</label>
-          <input id="color2" type="text" className="form-control" value={this.state.color2} onChange={this.updateColorPicker1}/>
+
+        <div className="form-group col-sm-12">
+          <label for="color2">Color 2
+            <input id="color2" type="text" className="form-control" value={this.state.color2} onChange={this.updateColorPicker1}/>
+          </label>
           <ColorPicker onChange={this.handlerColor2} color={this.state.color2}/>
         </div>
+
       </div>);
   }
 });

@@ -33,13 +33,13 @@ var ComplementaryColos = React.createClass({
     return (<div className="col-sm-8">
         <h2>ComplementaryColors</h2>
         <div className="row">
-          <div className="col-sm-6">
+          <div className="col-sm-12">
             <div className="row">
-              <div className="col-sm-6">
+              <div className="col-sm-3">
                 <div style={{height: '100px', width:'100px',backgroundColor:prim1}}></div>
                 <p>{prim1}</p>
               </div>
-              <div className="col-sm-6">
+              <div className="col-sm-3">
                 <div style={{height: '100px', width:'100px',backgroundColor:comp1}}></div>
                 <p>{comp1}</p>
               </div>
