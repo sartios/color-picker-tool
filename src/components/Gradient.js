@@ -13,13 +13,16 @@ var Gradient = React.createClass({
         gradient: 'linear-gradient('+color1+', '+color2+')',
         color1: color1,
         color2: color2,
-        tab: 'linear'
+        tab: 'linear',
+        position: 'left',
+        color1percent: '50',
+        color2percent: '50'
     };
   },
   handleClick: function(position){
     if(position){
-      var gradient = 'linear-gradient(to '+position+', '+this.state.color1+', '+this.state.color2+')';
-      this.setState({gradient: gradient});
+      var gradient = 'linear-gradient(to '+position+', '+this.state.color1+' '+this.state.color1percent+'%, '+this.state.color2+' '+this.state.color2percent+'%)';
+      this.setState({gradient: gradient, position: position});
     }
   },
   componentWillReceiveProps: function(newProps){
@@ -28,12 +31,26 @@ var Gradient = React.createClass({
       this.setState({
         color1: color1,
         color2: color2,
-        gradient: 'linear-gradient('+color1+', '+color2+')'
+        gradient: 'linear-gradient('+color1+' '+this.state.color1percent+'%, '+color2+' '+this.state.color2percent+'%)'
       });
     },
     updateTab: function(tabName){
       this.setState({
         tab: tabName
+      });
+    },
+    updateGradientColor1Percent: function(percent){
+      var gradient = 'linear-gradient(to '+this.state.position+', '+this.state.color1+' '+percent+'%, '+this.state.color2+' '+this.state.color2percent+'%)';
+      this.setState({
+        gradient: gradient,
+        color1percent: percent
+      });
+    },
+    updateGradientColor2Percent: function(percent){
+      var gradient = 'linear-gradient(to '+this.state.position+', '+this.state.color1+' '+this.state.color1percent+'%, '+this.state.color2+' '+percent+'%)';
+      this.setState({
+        gradient: gradient,
+        color2percent: percent
       });
     },
   render: function(){
@@ -48,7 +65,7 @@ var Gradient = React.createClass({
         </div>
         <GradientTabs updateTab={this.updateTab}/>
         <div className="row">
-          <LinearGradient handleClick={this.handleClick}/>
+          <LinearGradient handleClick={this.handleClick} updateGradientColor1Percent={this.updateGradientColor1Percent} updateGradientColor2Percent={this.updateGradientColor2Percent}/>
         </div>
       </div>);
     }else{
