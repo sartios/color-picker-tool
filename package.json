@@ -62,10 +62,13 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "complementary-colors": "^1.0.2",
     "core-js": "^2.0.0",
+    "hex-rgb": "^1.0.0",
     "hsl-to-hex": "^1.0.0",
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "react-dom": "^15.0.0",
+    "rgb-hex": "^2.0.0"
   }
 }
