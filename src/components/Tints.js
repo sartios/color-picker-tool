@@ -31,6 +31,18 @@ var Tints = React.createClass({
     this.setState({tint2: percent});
     this.setState({color2: color2});
   },
+  componentWillReceiveProps: function(newProps){
+      var color1 = '#' + rgbHex(newProps.color1[0],newProps.color1[1],newProps.color1[2]);
+      var color2 = '#' + rgbHex(newProps.color2[0],newProps.color2[1],newProps.color2[2]);
+      var rgb1 = newProps.color1;
+      var rgb2 = newProps.color2;
+      this.setState({
+        color1: color1,
+        color2: color2,
+        rgb1: rgb1,
+        rgb2: rgb2
+      });
+    },
   render: function(){
     return (<div className="col-sm-12">
       <h3>Tints</h3>

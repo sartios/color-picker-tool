@@ -18,6 +18,15 @@ var Gradient = React.createClass({
       this.setState({gradient: gradient});
     }
   },
+  componentWillReceiveProps: function(newProps){
+      var color1 = '#' + rgbHex(newProps.color1[0],newProps.color1[1],newProps.color1[2]);
+      var color2 = '#' + rgbHex(newProps.color2[0],newProps.color2[1],newProps.color2[2]);
+      this.setState({
+        color1: color1,
+        color2: color2,
+        gradient: 'linear-gradient('+color1+', '+color2+')'
+      });
+    },
   render: function(){
     var instance = this;
     return (<div className="col-sm-12">

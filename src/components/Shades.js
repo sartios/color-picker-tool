@@ -6,8 +6,8 @@ var Shades = React.createClass({
   getInitialState: function(){
     var color1 = '#' + rgbHex(this.props.color1[0],this.props.color1[1],this.props.color1[2]);
     var color2 = '#' + rgbHex(this.props.color2[0],this.props.color2[1],this.props.color2[2]);
-    var rgb1 = [this.props.color1[0],this.props.color1[1],this.props.color1[2]];
-    var rgb2 = [this.props.color2[0],this.props.color2[1],this.props.color2[2]];
+    var rgb1 = this.props.color1;
+    var rgb2 = this.props.color2;
     return {
       rgb1: rgb1,
       rgb2: rgb2,
@@ -30,6 +30,18 @@ var Shades = React.createClass({
     var color2 = color.shade(percent).hexString();
     this.setState({shade2: percent});
     this.setState({color2: color2});
+  },
+  componentWillReceiveProps: function(newProps){
+    var color1 = '#' + rgbHex(newProps.color1[0],newProps.color1[1],newProps.color1[2]);
+    var color2 = '#' + rgbHex(newProps.color2[0],newProps.color2[1],newProps.color2[2]);
+    var rgb1 = newProps.color1;
+    var rgb2 = newProps.color2;
+    this.setState({
+      color1: color1,
+      color2: color2,
+      rgb1: rgb1,
+      rgb2: rgb2
+    });
   },
   render: function(){
     return (<div className="col-sm-12">

@@ -6,17 +6,47 @@ var ComplementaryColors = require('./ComplementaryColors');
 var Gradient = require('./Gradient');
 var Tints = require('./Tints');
 var Shades = require('./Shades');
+var hexRgb = require('hex-rgb');
 
 var AppComponent = React.createClass({
+  getInitialState: function(){
+    var rgb1 = hexRgb('#36c');
+    var rgb2 = hexRgb('#36c');
+    return {
+      color1: '#36c',
+      color2: '#36c',
+      rgb1: rgb1,
+      rgb2: rgb2,
+    }
+  },
+  updateColor: function(color1, color2){
+    this.setState({
+      color1: color1, color2: color2
+    });
+  },
+  updateColor1: function(color){
+    var rgb = hexRgb((color));
+    this.setState({
+      color1 : color,
+      rgb1: rgb
+    });
+  },
+  updateColor2: function(color){
+    var rgb = hexRgb((color));
+    this.setState({
+      color2 : color,
+      rgb2: rgb
+    });
+  },
   render: function(){
     return (<div className="container-fluid">
       <div className="row">
         <div className="col-sm-12">
-          <ColorPicker />
-          <ComplementaryColors color1={[8,106,0]} color2={[0,213,255]}/>
-          <Gradient color1={[8,106,0]} color2={[0,213,255]}/>
-          <Tints color1={[8,106,0]} color2={[0,213,255]}/>
-          <Shades color1={[8,106,0]} color2={[0,213,255]}/>
+          <ColorPicker updateColors={this.updateColor} updateColor1={this.updateColor1} updateColor2={this.updateColor2}/>
+          <ComplementaryColors color1={this.state.rgb1} color2={this.state.rgb2}/>
+          <Gradient color1={this.state.rgb1} color2={this.state.rgb2}/>
+          <Tints color1={this.state.rgb1} color2={this.state.rgb2}/>
+          <Shades color1={this.state.rgb1} color2={this.state.rgb2}/>
         </div>
       </div>
     </div>);

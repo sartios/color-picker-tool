@@ -4,13 +4,21 @@ var rgbHex = require('rgb-hex');
 
 var ComplementaryColos = React.createClass({
   getInitialState: function(){
-    var rgb1 = [this.props.color1[0],this.props.color1[1],this.props.color1[2]];
-    var rgb2 = [this.props.color2[0],this.props.color2[1],this.props.color2[2]];
+    var rgb1 = this.props.color1;
+    var rgb2 = this.props.color2;
     return {
       rgb1: rgb1,
       rgb2: rgb2
     };
   },
+  componentWillReceiveProps: function(newProps){
+      var rgb1 = newProps.color1;
+      var rgb2 = newProps.color2;
+      this.setState({
+        rgb1: rgb1,
+        rgb2: rgb2
+      });
+    },
   render: function(){
     var hex1 = '#' + rgbHex(this.state.rgb1[0],this.state.rgb1[1],this.state.rgb1[2]);
     var hex2 = '#' + rgbHex(this.state.rgb2[0],this.state.rgb2[1],this.state.rgb2[2]);

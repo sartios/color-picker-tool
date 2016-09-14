@@ -67,6 +67,7 @@
     "hex-rgb": "^1.0.0",
     "hsl-to-hex": "^1.0.0",
     "normalize.css": "^4.0.0",
+    "rc-color-picker": "^1.1.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
     "rgb-hex": "^2.0.0",
