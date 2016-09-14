@@ -6,6 +6,18 @@ var GradientTabs = require('./GradientTabs');
 
 
 var Gradient = React.createClass({
+  componentDidMount: function(){
+    var color1 = '#' + rgbHex(this.props.color1[0],this.props.color1[1],this.props.color1[2]);
+    var color2 = '#' + rgbHex(this.props.color2[0],this.props.color2[1],this.props.color2[2]);
+
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var grd=ctx.createLinearGradient(0,0,50,50);
+    grd.addColorStop(this.state.color1percent / 100,color1);
+    grd.addColorStop(this.state.color2percent / 100,color2);
+    ctx.fillStyle=grd;
+    ctx.fillRect(10,10,150,80);
+  },
   getInitialState: function(){
     var color1 = '#' + rgbHex(this.props.color1[0],this.props.color1[1],this.props.color1[2]);
     var color2 = '#' + rgbHex(this.props.color2[0],this.props.color2[1],this.props.color2[2]);
@@ -52,6 +64,9 @@ var Gradient = React.createClass({
         gradient: gradient,
         color2percent: percent
       });
+    },alertXY: function(e){
+      console.log(e.pageX);
+      console.log(e.pageY);
     },
   render: function(){
     if(this.state.tab == 'linear'){
@@ -59,6 +74,7 @@ var Gradient = React.createClass({
         <h2>Gradient</h2>
         <div className="row">
           <div className="col-sm-12">
+            <canvas id="canvas" width="100" height="100" onMouseUp={this.alertXY}></canvas>
             <div style={{height: '100px', width: '100%', background: this.state.gradient}}></div>
           </div>
         </div>

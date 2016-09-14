@@ -3,7 +3,7 @@ require('styles/App.css');
 var React = require('react');
 var ColorPicker = require('./ColorPicker');
 var ComplementaryColors = require('./ComplementaryColors');
-var Gradient = require('./Gradient');
+var Gradient = require('./GradientCanvas');
 var Tints = require('./Tints');
 var Shades = require('./Shades');
 var hexRgb = require('hex-rgb');
