@@ -13,10 +13,10 @@ var AppComponent = React.createClass({
       <div className="row">
         <div className="col-sm-12">
           <ColorPicker />
-          <ComplementaryColors/>
-          <Gradient/>
-          <Tints />
-          <Shades />
+          <ComplementaryColors color1={[8,106,0]} color2={[0,213,255]}/>
+          <Gradient color1={[8,106,0]} color2={[0,213,255]}/>
+          <Tints color1={[8,106,0]} color2={[0,213,255]}/>
+          <Shades color1={[8,106,0]} color2={[0,213,255]}/>
         </div>
       </div>
     </div>);

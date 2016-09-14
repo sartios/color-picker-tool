@@ -4,11 +4,13 @@ var rgbHex = require('rgb-hex');
 
 var Tints = React.createClass({
   getInitialState: function(){
-    var color1 = '#' + rgbHex(8,106,0);
-    var color2 = '#' + rgbHex(0,213,255);
+    var color1 = '#' + rgbHex(this.props.color1[0],this.props.color1[1],this.props.color1[2]);
+    var color2 = '#' + rgbHex(this.props.color2[0],this.props.color2[1],this.props.color2[2]);
+    var rgb1 = [this.props.color1[0],this.props.color1[1],this.props.color1[2]];
+    var rgb2 = [this.props.color2[0],this.props.color2[1],this.props.color2[2]];
     return {
-      rgb1: [8,106,0],
-      rgb2: [0,213,255],
+      rgb1: rgb1,
+      rgb2: rgb2,
       color1: color1,
       color2: color2,
       tint1: 0,

@@ -4,8 +4,8 @@ var rgbHex = require('rgb-hex');
 
 var Gradient = React.createClass({
   getInitialState: function(){
-    var color1 = '#' + rgbHex(8,106,0);
-    var color2 = '#' + rgbHex(0,213,255);
+    var color1 = '#' + rgbHex(this.props.color1[0],this.props.color1[1],this.props.color1[2]);
+    var color2 = '#' + rgbHex(this.props.color2[0],this.props.color2[1],this.props.color2[2]);
     return {
         gradient: 'linear-gradient('+color1+', '+color2+')',
         color1: color1,
