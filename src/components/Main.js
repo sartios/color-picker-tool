@@ -5,6 +5,7 @@ var ColorPicker = require('./ColorPicker');
 var ComplementaryColors = require('./ComplementaryColors');
 var Gradient = require('./Gradient');
 var Tints = require('./Tints');
+var Shades = require('./Shades');
 
 var AppComponent = React.createClass({
   render: function(){
@@ -15,6 +16,7 @@ var AppComponent = React.createClass({
           <ComplementaryColors/>
           <Gradient/>
           <Tints />
+          <Shades />
         </div>
       </div>
     </div>);
