@@ -2,8 +2,14 @@ var React = require('react');
 var rgbHex = require('rgb-hex');
 var Harmonizer = require('color-harmony').Harmonizer;
 var harmonizer = new Harmonizer();
+var ColorCanvas = require('./ColorCanvas');
+var ComplementaryCanvas = require('./ComplementaryCanvas');
 
 var ComplementaryColos = React.createClass({
+  componentDidMount: function(){
+    var hex1 = '#' + rgbHex(this.state.rgb1[0],this.state.rgb1[1],this.state.rgb1[2]);
+    var hex2 = '#' + rgbHex(this.state.rgb2[0],this.state.rgb2[1],this.state.rgb2[2]);
+  },
   getInitialState: function(){
     var rgb1 = this.props.color1;
     var rgb2 = this.props.color2;
@@ -23,12 +29,6 @@ var ComplementaryColos = React.createClass({
   render: function(){
     var hex1 = '#' + rgbHex(this.state.rgb1[0],this.state.rgb1[1],this.state.rgb1[2]);
     var hex2 = '#' + rgbHex(this.state.rgb2[0],this.state.rgb2[1],this.state.rgb2[2]);
-    var color1 = harmonizer.harmonize(hex1, 'complementary');
-    var color2 = harmonizer.harmonize(hex2, 'complementary');
-    var prim1 = color1[0];
-    var comp1 = color1[1];
-    var prim2 = color2[0];
-    var comp2 = color2[1];
 
     return (<div className="col-sm-8">
         <h2>ComplementaryColors</h2>
@@ -36,24 +36,20 @@ var ComplementaryColos = React.createClass({
           <div className="col-sm-12">
             <div className="row">
               <div className="col-sm-3">
-                <div style={{height: '100px', width:'100px',backgroundColor:prim1}}></div>
-                <p>{prim1}</p>
+                <ColorCanvas canvasId="prim1" canvasColor={hex1}/>
               </div>
               <div className="col-sm-3">
-                <div style={{height: '100px', width:'100px',backgroundColor:comp1}}></div>
-                <p>{comp1}</p>
+                <ComplementaryCanvas canvasId="comp1" canvasColor={hex1}/>
               </div>
             </div>
           </div>
           <div className="col-sm-6">
             <div className="row">
               <div className="col-sm-6">
-                <div style={{height: '100px', width:'100px',backgroundColor:prim2}}></div>
-                <p>{prim2}</p>
+                <ColorCanvas canvasId="prim2" canvasColor={hex2}/>
               </div>
               <div className="col-sm-6">
-                <div style={{height: '100px', width:'100px',backgroundColor:comp2}}></div>
-                <p>{comp2}</p>
+                <ComplementaryCanvas canvasId="comp2" canvasColor={hex2}/>
               </div>
             </div>
           </div>
