@@ -44,7 +44,7 @@ var LinearGradientRotation = React.createClass({
       x2 = width;
       y2 = height - y1;
     }
-    return [x1, y1, x2, y2];
+    return [x1, y1, x2, y2, rotateDegrees];
   },
   render: function(){
     return (

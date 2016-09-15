@@ -59,11 +59,13 @@ var Shades = React.createClass({
     var color1 = this._getShadeColor(this.state.color1, this.state.shade1);
     var color2 = this._getShadeColor(this.state.color2, this.state.shade2);
     return (<div className="col-sm-12">
+      <h2>Color Shades</h2>
   <div className="row">
         <div className="col-sm-12">
         <div className="col-sm-3">
           <div className="col-sm-12">
               <Range options={this._getRangeOptions('shade1', 0, 100,0,'Shade 1')} updateValue={this.handleshade1}/>
+              <span className="badge" style={{backgroundColor: this.state.color1}}>{this.state.shade1}</span>
           </div>
         </div>
         <div className="col-sm-9">
@@ -72,7 +74,9 @@ var Shades = React.createClass({
           </div>
           <div className="col-sm-6">
             <p style={{textAlign: 'center'}}>{this.state.shade1}%</p>
-            <p style={{textAlign: 'center'}}>{color1}</p>
+            <p style={{textAlign: 'center'}}>
+            <span className="label label-danger">{color1}</span>
+            </p>
           </div>
         </div>
       </div>
@@ -81,7 +85,8 @@ var Shades = React.createClass({
         <div className="col-sm-12">
         <div className="col-sm-3">
           <div className="col-sm-12">
-              <Range options={this._getRangeOptions('shade1', 0, 100,0,'Shade 2')} updateValue={this.handleshade2}/>
+              <Range options={this._getRangeOptions('shade2', 0, 100,0,'Shade 2')} updateValue={this.handleshade2}/>
+              <span className="badge" style={{backgroundColor: this.state.color2}}>{this.state.shade2}</span>
           </div>
         </div>
         <div className="col-sm-9">
@@ -90,7 +95,9 @@ var Shades = React.createClass({
           </div>
           <div className="col-sm-6">
             <p style={{textAlign: 'center'}}>{this.state.shade2}%</p>
-            <p style={{textAlign: 'center'}}>{color2}</p>
+            <p style={{textAlign: 'center'}}>
+              <span className="label label-danger">{color2}</span>
+            </p>
           </div>
         </div>
       </div>

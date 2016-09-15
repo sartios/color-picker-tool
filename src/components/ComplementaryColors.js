@@ -26,7 +26,7 @@ var ComplementaryColos = React.createClass({
     },
   render: function(){
     return (<div className="col-sm-8">
-        <h2>ComplementaryColors</h2>
+        <h2>Complementary Colors</h2>
         <div className="row">
           <div className="col-sm-12">
             <div className="col-sm-2">

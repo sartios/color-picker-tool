@@ -8,7 +8,7 @@ var Gradient = React.createClass({
     return{
       color1Per: 0,
       color2Per: 1,
-      coords: [0, 150, 300, 150]
+      coords: [0, 150, 300, 150, 0]
     }
   },
   _renderCanvas: function(){
@@ -23,16 +23,16 @@ var Gradient = React.createClass({
        this.state.coords[3]);
 
      // Add colors
-     var rgb1 = this.props.color1;
-     var rgb2 = this.props.color2;
-     var hex1 = '#' + rgbHex(rgb1[0],rgb1[1],rgb1[2]);
-     var hex2 = '#' + rgbHex(rgb2[0],rgb2[1],rgb2[2]);
+     var hex1 = this._getHex(this.props.color1)
+     var hex2 = this._getHex(this.props.color2)
      grd.addColorStop(this.state.color1Per, hex1);
      grd.addColorStop(this.state.color2Per, hex2);
 
-
      ctx.fillStyle = grd;
      ctx.fillRect(0, 0, 300.000, 300.000);
+  },
+  _getHex: function(rgb){
+    return '#' + rgbHex(rgb[0],rgb[1],rgb[2]);
   },
   _updateRotateCoords: function(coords){
     this.setState({
@@ -51,17 +51,20 @@ var Gradient = React.createClass({
   },
   render: function(){
       return (
-        <div className="row">
         <div className="col-sm-12">
+          <h2>Linear Gradient</h2>
         <div className="col-sm-3">
           <div className="col-sm-12">
               <LinearGradientColorPercent initPercent="0" propLabel="Color 1" updateColor={this._updateColor1Percent}/>
+              <span className="badge" style={{backgroundColor: this._getHex(this.props.color1)}}>{Math.floor(this.state.color1Per * 100)}</span>
           </div>
           <div className="col-sm-12">
               <LinearGradientColorPercent initPercent="1" propLabel="Color 2" updateColor={this._updateColor2Percent}/>
+              <span className="badge" style={{backgroundColor: this._getHex(this.props.color2)}}>{Math.floor(this.state.color2Per * 100)}</span>
           </div>
           <div className="col-sm-12">
               <LinearGradientRotation updateRotateCoords={this._updateRotateCoords} canvasWidth="300" canvasHeight="300"/>
+              <span className="badge" >{this.state.coords[4]}</span>
           </div>
         </div>
         <div className="col-sm-9">
@@ -69,8 +72,7 @@ var Gradient = React.createClass({
             <canvas id="canvas" width="300" height="300"></canvas>
           </div>
         </div>
-      </div>
-    </div>)
+      </div>)
   },
   componentDidMount: function(){
     this._renderCanvas();

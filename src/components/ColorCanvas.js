@@ -10,7 +10,9 @@ var ColorCanvas = React.createClass({
   render: function(){
     return (<div>
       <canvas id={this.props.canvasId} width="100" height="100"></canvas>
-      <p>{this.props.canvasColor}</p>
+      <p>
+          <span className="label label-danger">{this.props.canvasColor}</span>
+      </p>
     </div>);
   },
   componentDidMount: function(){

@@ -13,7 +13,9 @@ var ComplementaryCanvas = React.createClass({
   render: function(){
     return (<div>
       <canvas id={this.props.canvasId}  width="100" height="100"></canvas>
-      <p>{harmonizer.harmonize(this.props.canvasColor, 'complementary')[1]}</p>
+      <p>
+        <span className="label label-danger">{harmonizer.harmonize(this.props.canvasColor, 'complementary')[1]}</span>
+      </p>
     </div>);
   },
   componentDidMount: function(){

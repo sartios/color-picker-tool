@@ -59,11 +59,13 @@ var Tints = React.createClass({
     var color1 = this._getTintColor(this.state.color1, this.state.tint1);
     var color2 = this._getTintColor(this.state.color2, this.state.tint2);
     return (<div className="col-sm-12">
+      <h2>Color Tints</h2>
   <div className="row">
         <div className="col-sm-12">
         <div className="col-sm-3">
           <div className="col-sm-12">
               <Range options={this._getRangeOptions('tint1', 0, 100,0,'Tint 1')} updateValue={this.handleTint1}/>
+              <span className="badge" style={{backgroundColor: this.state.color1}}>{this.state.tint1}</span>
           </div>
         </div>
         <div className="col-sm-9">
@@ -72,7 +74,9 @@ var Tints = React.createClass({
           </div>
           <div className="col-sm-6">
             <p style={{textAlign: 'center'}}>{this.state.tint1}%</p>
-            <p style={{textAlign: 'center'}}>{color1}</p>
+            <p style={{textAlign: 'center'}}>
+              <span className="label label-danger">{color1}</span>
+            </p>
           </div>
         </div>
       </div>
@@ -82,6 +86,7 @@ var Tints = React.createClass({
         <div className="col-sm-3">
           <div className="col-sm-12">
               <Range options={this._getRangeOptions('tint2', 0, 100,0,'Tint2')} updateValue={this.handleTint2}/>
+              <span className="badge" style={{backgroundColor: this.state.color2}}>{this.state.tint2}</span>
           </div>
         </div>
         <div className="col-sm-9">
@@ -90,7 +95,9 @@ var Tints = React.createClass({
           </div>
           <div className="col-sm-6">
             <p style={{textAlign: 'center'}}>{this.state.tint2}%</p>
-            <p style={{textAlign: 'center'}}>{color2}</p>
+            <p style={{textAlign: 'center'}}>
+              <span className="label label-danger">{color2}</span>
+            </p>
           </div>
         </div>
       </div>
