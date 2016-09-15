@@ -37,7 +37,7 @@ var MyColorPicker = React.createClass({
   },
   render: function(){
     return (<div className="col-sm-4 color-picker">
-        <h2>ColorPicker</h2>
+        <h2>Color Picker</h2>
         <div className="form-group col-sm-12">
           <label for="color1">Color 1
             <input id="color1" className="form-control" value={this.state.color1} onChange={this.updateColorPicker1} />
