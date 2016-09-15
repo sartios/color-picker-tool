@@ -50,12 +50,27 @@ var Gradient = React.createClass({
     });
   },
   render: function(){
-      return (<div>
-        <canvas id="canvas" width="300" height="300"></canvas>
-        <LinearGradientColorPercent initPercent="0" propLabel="color 1" updateColor={this._updateColor1Percent}/>
-        <LinearGradientColorPercent initPercent="1" propLabel="color 2" updateColor={this._updateColor2Percent}/>
-        <LinearGradientRotation updateRotateCoords={this._updateRotateCoords} canvasWidth="300" canvasHeight="300"/>
-      </div>)
+      return (
+        <div className="row">
+        <div className="col-sm-12">
+        <div className="col-sm-3">
+          <div className="col-sm-12">
+              <LinearGradientColorPercent initPercent="0" propLabel="color 1" updateColor={this._updateColor1Percent}/>
+          </div>
+          <div className="col-sm-12">
+              <LinearGradientColorPercent initPercent="1" propLabel="color 2" updateColor={this._updateColor2Percent}/>
+          </div>
+          <div className="col-sm-12">
+              <LinearGradientRotation updateRotateCoords={this._updateRotateCoords} canvasWidth="300" canvasHeight="300"/>
+          </div>
+        </div>
+        <div className="col-sm-9">
+          <div className="col-sm-12 col-sm-offset-1">
+            <canvas id="canvas" width="300" height="300"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>)
   },
   componentDidMount: function(){
     this._renderCanvas();

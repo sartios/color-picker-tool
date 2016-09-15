@@ -16,10 +16,10 @@ var Range = React.createClass({
   render: function(){
     var options = this.props.options;
     return (
-      <div>
+      <label> {options.label}
         <input id={options.id} className="form-control" type="range" min={options.min} max={options.max}
         value={this.state.rangeValue} onChange={this._handleChange}/>
-      </div>
+      </label>
     )
   }
 });

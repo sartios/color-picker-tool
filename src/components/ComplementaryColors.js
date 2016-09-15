@@ -29,23 +29,19 @@ var ComplementaryColos = React.createClass({
         <h2>ComplementaryColors</h2>
         <div className="row">
           <div className="col-sm-12">
-            <div className="row">
-              <div className="col-sm-3">
-                <ColorCanvas canvasId="prim1" canvasColor={this.state.hex1}/>
-              </div>
-              <div className="col-sm-3">
-                <ComplementaryCanvas canvasId="comp1" canvasColor={this.state.hex1}/>
-              </div>
+            <div className="col-sm-2">
+              <ColorCanvas canvasId="prim1" canvasColor={this.state.hex1}/>
+            </div>
+            <div className="col-sm-2">
+              <ComplementaryCanvas canvasId="comp1" canvasColor={this.state.hex1}/>
             </div>
           </div>
-          <div className="col-sm-6">
-            <div className="row">
-              <div className="col-sm-6">
-                <ColorCanvas canvasId="prim2" canvasColor={this.state.hex2}/>
-              </div>
-              <div className="col-sm-6">
-                <ComplementaryCanvas canvasId="comp2" canvasColor={this.state.hex2}/>
-              </div>
+          <div className="col-sm-12">
+            <div className="col-sm-2">
+              <ColorCanvas canvasId="prim2" canvasColor={this.state.hex2}/>
+            </div>
+            <div className="col-sm-2">
+              <ComplementaryCanvas canvasId="comp2" canvasColor={this.state.hex2}/>
             </div>
           </div>
         </div>
