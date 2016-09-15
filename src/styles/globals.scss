@@ -1,13 +1,32 @@
 body {
-  color: #E0D0C0;
+  color: $color4 !important;
+}
+
+.app{
+  background-color: $color1;
+  color: $color4;
+  font-family: $font;
 }
 
 .my-app{
   background-color: $color1;
   color: $color4;
+  font-family: $font;
 }
 
 canvas{
   border-radius: 5px 5px;
   box-shadow: 5px 5px 5px $color2;
+}
+
+label{
+  font-size: $label-size;
+}
+
+p{
+  font-size: $p-size;
+}
+
+.form-control{
+    box-shadow: 5px 5px 5px $color2 !important;
 }

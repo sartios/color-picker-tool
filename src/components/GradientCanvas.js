@@ -55,10 +55,10 @@ var Gradient = React.createClass({
         <div className="col-sm-12">
         <div className="col-sm-3">
           <div className="col-sm-12">
-              <LinearGradientColorPercent initPercent="0" propLabel="color 1" updateColor={this._updateColor1Percent}/>
+              <LinearGradientColorPercent initPercent="0" propLabel="Color 1" updateColor={this._updateColor1Percent}/>
           </div>
           <div className="col-sm-12">
-              <LinearGradientColorPercent initPercent="1" propLabel="color 2" updateColor={this._updateColor2Percent}/>
+              <LinearGradientColorPercent initPercent="1" propLabel="Color 2" updateColor={this._updateColor2Percent}/>
           </div>
           <div className="col-sm-12">
               <LinearGradientRotation updateRotateCoords={this._updateRotateCoords} canvasWidth="300" canvasHeight="300"/>

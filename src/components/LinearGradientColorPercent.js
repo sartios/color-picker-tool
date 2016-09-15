@@ -17,6 +17,7 @@ var LinearGradientColorPercent = React.createClass({
     return (
       <label> {this.props.propLabel}
         <input type="range" min="0" max="100" value={this.state.percent * 100} className="form-control" onChange={this._updateColorPercent}/>
+        {Math.floor(this.state.percent * 100)}
       </label>
     );
   }
