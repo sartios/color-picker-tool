@@ -1,0 +1,13 @@
+body {
+  color: #E0D0C0;
+}
+
+.my-app{
+  background-color: $color1;
+  color: $color4;
+}
+
+canvas{
+  border-radius: 5px 5px;
+  box-shadow: 5px 5px 5px $color2;
+}

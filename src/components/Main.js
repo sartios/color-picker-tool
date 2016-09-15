@@ -1,5 +1,5 @@
 require('normalize.css/normalize.css');
-require('../styles/App.css');
+require('../styles/App.scss');
 var React = require('react');
 var ColorPicker = require('./ColorPicker');
 var ComplementaryColors = require('./ComplementaryColors');
@@ -39,7 +39,7 @@ var AppComponent = React.createClass({
     });
   },
   render: function(){
-    return (<div className="container-fluid">
+    return (<div className="container-fluid my-app">
       <div className="row">
         <div className="col-sm-12">
           <ColorPicker updateColors={this.updateColor} updateColor1={this.updateColor1} updateColor2={this.updateColor2}/>

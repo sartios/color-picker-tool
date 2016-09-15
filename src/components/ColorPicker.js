@@ -1,7 +1,6 @@
 var React = require('react');
 var ColorPicker = require('rc-color-picker');
 require('rc-color-picker/assets/index.css');
-require('./color-picker.css');
 
 var MyColorPicker = React.createClass({
   getInitialState: function(){

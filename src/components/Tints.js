@@ -68,7 +68,7 @@ var Tints = React.createClass({
         </div>
         <div className="col-sm-9">
           <div className="col-sm-12 col-sm-offset-1">
-            <ShadeCanvas options={this._getTintCanvasOptions("tintCanvas1", 300, 100, color1)}/>
+            <ShadeCanvas options={this._getTintCanvasOptions('tintCanvas1', 300, 100, color1)}/>
           </div>
           <div className="col-sm-6">
             <p style={{textAlign: 'center'}}>{this.state.tint1}%</p>
@@ -86,7 +86,7 @@ var Tints = React.createClass({
         </div>
         <div className="col-sm-9">
           <div className="col-sm-12 col-sm-offset-1">
-            <ShadeCanvas options={this._getTintCanvasOptions("tintCanvas2", 300, 100, color2)}/>
+            <ShadeCanvas options={this._getTintCanvasOptions('tintCanvas2', 300, 100, color2)}/>
           </div>
           <div className="col-sm-6">
             <p style={{textAlign: 'center'}}>{this.state.tint2}%</p>
