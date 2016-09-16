@@ -1,6 +1,7 @@
 var React = require('react');
 var ColorPicker = require('rc-color-picker');
 require('rc-color-picker/assets/index.css');
+var hexRgb = require('hex-rgb');
 
 var MyColorPicker = React.createClass({
   getInitialState: function(){
@@ -25,15 +26,21 @@ var MyColorPicker = React.createClass({
   },
   updateColorPicker1: function(e){
     var color = e.target.value;
-    this.setState({
-      color1: color
-    });
+    if(hexRgb(color)){
+      this.setState({
+        color1: color
+      });
+      this.props.updateColor1(color);
+    }
   },
   updateColorPicker2: function(e){
     var color = e.target.value;
-    this.setState({
-      color2: color
-    });
+    if(hexRgb(color)){
+      this.setState({
+        color2: color
+      });
+      this.props.updateColor2(color);
+    }
   },
   render: function(){
     return (<div className="col-sm-4 color-picker">
@@ -47,7 +54,7 @@ var MyColorPicker = React.createClass({
 
         <div className="form-group col-sm-12">
           <label for="color2">Color 2
-            <input id="color2" type="text" className="form-control" value={this.state.color2} onChange={this.updateColorPicker1}/>
+            <input id="color2" type="text" className="form-control" value={this.state.color2} onChange={this.updateColorPicker2}/>
           </label>
           <ColorPicker onChange={this.handlerColor2} color={this.state.color2}/>
         </div>

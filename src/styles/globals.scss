@@ -23,6 +23,10 @@ label{
   font-size: $label-size;
 }
 
+input{
+  text-transform: uppercase;
+}
+
 p{
   font-size: $p-size;
   text-transform: uppercase;
