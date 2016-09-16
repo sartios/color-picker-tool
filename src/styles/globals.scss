@@ -8,6 +8,12 @@ body {
   font-family: $font;
 }
 
+h1,h2,h3,h4,h5,h6{
+  font-weight: 900;
+  margin-top:80px !important;
+}
+
+
 canvas{
   border-radius: 5px 5px;
   box-shadow: 5px 5px 5px $color2;
@@ -19,17 +25,20 @@ label{
 
 p{
   font-size: $p-size;
+  text-transform: uppercase;
+  font-size: 1.7em;
 }
 
 .form-control{
     box-shadow: 5px 5px 5px $color2 !important;
 }
 
-.alert .alert-danger{
-  background-color: $color5;
-  box-shadow: 10px 10px 10px $color5 !important;
+.label-danger{
+  background-color: $color5 !important;
+  box-shadow: 3px 3px 3px $color2 !important;
 }
 
 .badge{
   box-shadow: 5px 5px 5px $color2 !important;
+  margin-left: 5px;
 }

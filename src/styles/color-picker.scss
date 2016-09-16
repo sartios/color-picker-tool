@@ -10,3 +10,14 @@
   margin-top: -17px;
   position: absolute;
 }
+
+@-moz-document url-prefix() {
+    .color-picker .rc-color-picker-trigger{
+      margin-top: 10px;
+    }
+
+    .badge{
+      margin-top: 50px;
+      margin-left: 5px;
+    }
+}
