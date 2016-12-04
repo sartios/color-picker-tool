@@ -1,0 +1,12 @@
+
+.color-picker label{
+  width: 40%;
+  padding-top: 10%;
+}
+
+.color-picker .rc-color-picker-trigger{
+  margin-left: -20px;
+  height: 27px;
+  margin-top: -17px;
+  position: absolute;
+}
