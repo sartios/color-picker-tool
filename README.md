@@ -21,12 +21,6 @@ Eslint is used for linting. Linting will also be executed automatically on our C
 npm run lint
 ```
 
-And automatically fix issues:
-
-```
-npm run lint
-```
-
 ## Quick start
 
 1. npm install
